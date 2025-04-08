@@ -3,6 +3,10 @@
   font-size: 18px;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -32,11 +36,10 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 25px;
-}
-
-.product .product-details {
-  display: flex;
-  align-items: center;
+  .product-details {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .product img {
@@ -80,6 +83,6 @@
 }
 
 .discount {
-  margin-top: 10px;
+  margin-top: -15px;
   color: #d25ca1;
 }
