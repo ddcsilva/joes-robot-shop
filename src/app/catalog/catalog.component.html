@@ -1,6 +1,6 @@
 <div class="container">
   <div class="filters">
-    <a class="button" (click)="filter = 'Cabeças'">Cabeças</a>
+    <a class="button bold" (click)="filter = 'Cabeças'">Cabeças</a>
     <a class="button" (click)="filter = 'Braços'">Braços</a>
     <a class="button" (click)="filter = 'Troncos'">Troncos</a>
     <a class="button" (click)="filter = 'Bases'">Bases</a>
@@ -19,13 +19,12 @@
           </div>
         </div>
         <div class="price">
-          <div *ngIf="product && product.discount === 0">
+          <div [ngClass]="getDiscountedClasses(product)">
             {{ product.price | currency : "BRL" }}
           </div>
           <div *ngIf="product && product.discount > 0" class="discount">
             {{ product.price * (1 - product.discount) | currency : "BRL" }}
           </div>
-
           <button class="cta">Comprar</button>
         </div>
       </div>
