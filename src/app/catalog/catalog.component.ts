@@ -7,7 +7,8 @@ import { IProduct } from './product.model';
   styleUrls: ['./catalog.component.css'],
 })
 export class CatalogComponent {
-  products: IProduct[];
+  products: IProduct[] = [];
+  cart: IProduct[] = [];
   filter: string = '';
 
   constructor() {
@@ -189,14 +190,14 @@ export class CatalogComponent {
     ];
   }
 
-  getImageUrl(product: IProduct) {
-    if (!product) return '';
-    return `assets/images/robot-parts/${product.imageName}`;
-  }
-
   getFilteredProducts() {
     return this.filter === ''
       ? this.products
       : this.products.filter((product) => product.category === this.filter);
+  }
+
+  addToCart(product: IProduct) {
+    this.cart.push(product);
+    console.log(`Produto adicionado ao carrinho: ${product.name}`);
   }
 }

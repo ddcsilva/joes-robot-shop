@@ -7,6 +7,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 registerLocaleData(localePt);
 
@@ -16,6 +17,7 @@ registerLocaleData(localePt);
     HomeComponent,
     CatalogComponent,
     SiteHeaderComponent,
+    ProductDetailsComponent,
   ],
   imports: [BrowserModule],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
